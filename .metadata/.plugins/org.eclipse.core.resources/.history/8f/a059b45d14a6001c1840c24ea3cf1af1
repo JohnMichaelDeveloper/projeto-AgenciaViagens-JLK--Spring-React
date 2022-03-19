@@ -1,0 +1,10 @@
+package com.jlk.agencia.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.jlk.agencia.entities.Compra;
+import com.jlk.agencia.entities.ScorePK;
+
+public interface ScoreRepository extends JpaRepository<Compra, ScorePK>{
+
+}

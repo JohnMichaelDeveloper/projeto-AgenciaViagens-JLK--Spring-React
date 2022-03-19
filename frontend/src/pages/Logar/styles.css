@@ -1,0 +1,20 @@
+h2{
+  color:#03047c;
+}
+.bg_img{
+  background-image: url("https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); 
+  height: 39rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  margin: -86px 0px;
+}
+.bg_form{
+  background-image: radial-gradient(#8178789e, #d9bfbf8c, #f9f3f3a1);
+  border-radius: 25px;
+  height: 29rem;
+  box-shadow: 0px 0px 8px #111111bd;
+  width: 35rem;
+}

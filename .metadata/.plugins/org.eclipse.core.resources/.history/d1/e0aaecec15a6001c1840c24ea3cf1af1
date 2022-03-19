@@ -1,0 +1,67 @@
+package com.jlk.agencia.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.jlk.agencia.dto.PacoteDTO;
+import com.jlk.agencia.dto.CompraDTO;
+import com.jlk.agencia.entities.Pacote;
+import com.jlk.agencia.entities.Compra;
+import com.jlk.agencia.entities.User;
+import com.jlk.agencia.repositories.PacoteRepository;
+import com.jlk.agencia.repositories.CompraRepository;
+import com.jlk.agencia.repositories.UserRepository;
+
+@Service
+public class CompraService{
+	
+	@Autowired
+	private PacoteRepository movieRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private CompraRepository scoreRepository;
+	
+	@Transactional
+	public PacoteDTO saveScore(CompraDTO dto) {
+		
+		User user = userRepository.findByEmail(dto.getEmail());
+		
+		if(user == null) {
+			user = new User();
+			user.setEmail(dto.getEmail());
+			user = userRepository.saveAndFlush(user);
+		}
+		
+		Pacote movie = movieRepository.findById(dto.getMovieId()).get();
+		
+		
+		Compra score = new Compra();
+		score.setMovie(movie);
+		score.setUser(user);
+		score.setValue(dto.getScore());
+		
+		score = scoreRepository.saveAndFlush(score);
+		
+		double sum = 0.0;
+		for(Compra s : movie.getScores()) {
+			sum = sum + s.getValue();
+		}
+		
+		double avg = sum / movie.getScores().size();
+		
+		movie.setScore(avg);
+		movie.setCount(movie.getScores().size());
+		
+		movie = movieRepository.save(movie);
+		
+		return new PacoteDTO(movie);
+	
+	}
+	
+
+}
+

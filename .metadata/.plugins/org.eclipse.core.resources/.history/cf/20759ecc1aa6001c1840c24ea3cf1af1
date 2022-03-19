@@ -1,0 +1,38 @@
+package com.jlk.agencia.dto;
+
+public class CompraDTO {
+
+	private Long pacoteId;
+	private String email;
+	private  Double score;
+	
+	public CompraDTO() {
+		
+	}
+
+	public Long getPacoteId() {
+		return pacoteId;
+	}
+
+	public void setPacoteId(Long pacoteId) {
+		this.pacoteId = pacoteId;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+	
+	
+}

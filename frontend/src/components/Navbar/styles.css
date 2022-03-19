@@ -1,0 +1,64 @@
+/* header {
+  height: 60px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+} */
+/* 
+.dsmovie-nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.dsmovie-nav-content h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.dsmovie-contact-container {
+  display: flex;
+  align-items: center;
+}
+
+.dsmovie-contact-link {
+  margin: 0 0 0 10px;
+  font-size: 12px;
+} */
+.logoJust{
+  max-width: 100%;
+  height: 2.5rem;
+  position: absolute;
+  left: 53px;
+  top: 8px;  
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  /* background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; */
+  background-image: linear-gradient(45deg, #f1c205, #0e4af5ed) !important;
+  margin: 7px 10px;
+  border: 8px solid #cfcfcf;
+  box-shadow: 4px 5px 23px #1111118f;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(255 255 255 / 73%) !important;
+}
+.section {
+  position: relative;
+  /* margin-top: 2rem; */
+  width: 98% !important;
+  height: 100%;
+  margin: 2rem 10px;
+}
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.55);
+  border-color: rgb(0 0 0 / 0%) !important;
+  filter: invert(1);
+}
+.navbar-light .navbar-toggler:hover {
+  color: rgba(0, 0, 0, 0.55);
+  border-color: rgb(0 0 0 / 0%);
+}

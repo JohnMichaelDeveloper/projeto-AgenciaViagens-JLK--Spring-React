@@ -1,0 +1,85 @@
+package com.jlk.agencia.entities;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_compra")
+public class Compra {
+
+	@EmbeddedId
+	private CompraPK id = new CompraPK();
+	private String tel;
+	private Double diaria;
+	private String dataDaCompra;
+	private String valor;
+	private String formaDePagamento;
+	
+	public Compra() {
+		
+	}
+	
+//	add my package to my purchase.
+	
+	public void setPacote(Pacote pacote) {
+		id.setPacote(pacote);
+	}
+	
+	
+	public void setUser(User user) {
+		id.setUser(user);
+	}
+	
+//	Gets and Sets
+	
+	public CompraPK getId() {
+		return id;
+	}
+
+	public void setId(CompraPK id) {
+		this.id = id;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public Double getDiaria() {
+		return diaria;
+	}
+
+	public void setDiaria(Double diaria) {
+		this.diaria = diaria;
+	}
+
+	public String getDataDaCompra() {
+		return dataDaCompra;
+	}
+
+	public void setDataDaCompra(String dataDaCompra) {
+		this.dataDaCompra = dataDaCompra;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
+	public String getFormaDePagamento() {
+		return formaDePagamento;
+	}
+
+	public void setFormaDePagamento(String formaDePagamento) {
+		this.formaDePagamento = formaDePagamento;
+	}
+	
+	
+}

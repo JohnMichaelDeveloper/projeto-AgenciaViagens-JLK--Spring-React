@@ -1,0 +1,45 @@
+package com.jlk.agencia.entities;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_score")
+public class Compra {
+
+	@EmbeddedId
+	private CompraPK id = new CompraPK();
+	private Double value;
+	
+	public Compra() {
+		
+	}
+	
+	
+	public void setMovie(Pacote movie) {
+		id.setMovie(movie);
+	}
+	
+	public void setUser(User user) {
+		id.setUser(user);
+	}
+
+	public CompraPK getId() {
+		return id;
+	}
+
+	public void setId(CompraPK id) {
+		this.id = id;
+	}
+
+	public Double getValue() {
+		return value;
+	}
+
+	public void setValue(Double value) {
+		this.value = value;
+	}
+	
+	
+}
